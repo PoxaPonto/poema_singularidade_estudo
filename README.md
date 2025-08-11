@@ -1,0 +1,1 @@
+# poema_singularidade_estudo
