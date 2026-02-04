@@ -33,8 +33,6 @@ Tudo é pensado para que a leitura seja **calma, íntima e sensorial**, quase co
 - **CSS3**  
 - **JavaScript** (interações e efeitos)  
 
-Sem frameworks pesados, priorizando leveza e carregamento rápido.
-
 ---
 
 ## 🌐 Página Online
@@ -58,4 +56,4 @@ Projeto autoral • Criativo • Experimental
 
 ---
 
-> “Nem toda página precisa explicar algo. Algumas só precisam ser sentidas.”
+> “Apenas testando algumas idade e aplicando estudos”
