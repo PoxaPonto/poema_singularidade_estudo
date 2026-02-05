@@ -1,4 +1,4 @@
-# 🍃 Folha 
+# 📖 Poema
 
 **Folha** é uma página experimental e artística criada pra estudo
 Ela funciona como uma **carta poética digital**, unindo texto literário, estética minimalista e experiência visual para transmitir sentimentos, reflexões e simbolismos.
