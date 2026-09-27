@@ -5,145 +5,119 @@
 }
 
 body {
-  background: linear-gradient(45deg, #000000, #000000, #000000);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 320px;
   min-height: 100vh;
-  margin: 0;
+  min-height: 100dvh;
+  padding: 32px 16px;
+  display: grid;
+  place-items: center;
   position: relative;
+  isolation: isolate;
+  font-family: Arial, sans-serif;
+  background: #000;
 }
 
 #bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .folha {
-  width: 80%;
-  max-width: 800px;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.021);
-  border: 1px solid #000000;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  font-family: 'Times New Roman', Times, serif;
-  line-height: 1.6;
-  color: #333;
-  animation: slideIn 1.5s ease-out, fadeBackground 10s linear infinite;
   position: relative;
+  z-index: 1;
+  width: min(800px, 100%);
+  margin: 0;
+  padding: 40px;
   overflow: hidden;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.021);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
   backdrop-filter: blur(5px);
-  animation: pulse 5s infinite; /* Aplica o efeito de movimento */
-}
-
-
-@keyframes slideIn {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  transform: none;
 }
 
 .folha:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes pulse {
-  0% {
-      transform: scale(1);
-  }
-  50% {
-      transform: scale(1.03);
-  }
-  100% {
-      transform: scale(1);
-  }
-}
-
 h1 {
-  font-size: 28px;
   color: #a30101;
+  font-size: 28px;
   text-shadow: 0 0 5px rgba(228, 0, 0, 0.5), 0 0 10px rgba(252, 0, 0, 0.5);
   animation: glow 2s ease-in-out infinite alternate;
 }
 
 h2 {
-    font-size: 18px;
-    color: #a30101d7;
-    text-shadow: 0 0 5px rgba(228, 0, 0, 0.322), 0 0 10px rgba(252, 0, 0, 0.315);
-    animation: glow 2s ease-in-out infinite alternate;
-  }
+  color: #a30101d7;
+  font-size: 18px;
+  text-shadow: 0 0 5px rgba(228, 0, 0, 0.322), 0 0 10px rgba(252, 0, 0, 0.315);
+  animation: glow 2s ease-in-out infinite alternate;
+}
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(255, 0, 0);
+    text-shadow: 0 0 5px #000, 0 0 10px #f00;
   }
+
   to {
-    text-shadow: 0 0 15px rgb(243, 4, 4), 0 0 30px rgb(247, 1, 1);
+    text-shadow: 0 0 15px #f30404, 0 0 30px #f70101;
   }
 }
 
 p {
+  color: #fff;
   font-size: 18px;
   line-height: 1.8;
-  color: #ffffff;
-}
-/* Estilos básicos da página */
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
 }
 
-/* Estilo do botão de play */
+.play-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  position: static;
+  transform: none;
+}
+
 .play-btn {
-    width: 25px;
-    height: 25px;
-    background-color: #fd000069;
-    color: rgb(0, 0, 0);
-    font-size: 12px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 10px;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background-color: #fd000069;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #000;
+  cursor: pointer;
+  font-size: 12px;
+  position: static;
+  transform: none;
 }
 
-/* Efeito de hover no botão de play */
 .play-btn:hover {
-    background-color: #ff00009a;
-}
-.folhas .play-btn-container {
-    position: absolute;
-    top: 300px;  /* Posição do botão dentro da carta */
-    left: 50%;
-    transform: translateX(-50%);
+  background-color: #ff00009a;
 }
 
-.play-btn {
-    position: absolute;
-    top:91%;  /* Centraliza verticalmente na tela */
-    left: 91%;  /* Centraliza horizontalmente na tela */
-    transform: translate(-50%, -50%);  /* Ajuste para centralizar */
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .folha {
+    padding: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
 }
-
-
