@@ -38,7 +38,7 @@ Tudo é pensado para que a leitura seja **calma, íntima e sensorial**, quase co
 ## 🌐 Página Online
 
 Você pode acessar a página aqui:  
-🔗 **https://preeminent-semifreddo-2247c3.netlify.app/**
+🔗 **https://glistening-meringue-3bec94.netlify.app**
 
 ---
 
